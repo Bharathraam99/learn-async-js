@@ -1,1 +1,19 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+The sum2DArray function is invoked with array2D, logging "Sum called ... " and entering the asynchronous operation.
+
+The function logs "returning from sum" immediately after starting the asynchronous operation.
+
+The asynchronous operation inside the setTimeout is queued to be executed after a minimal delay (0 milliseconds).
+
+The function continues to execute and logs "resolving ... " after the asynchronous operation is complete, resolving the promise with the sum of the 2D array.
+
+For sumPromise2, the function is invoked with the string 'array2D', logging "Sum called ... " and entering the asynchronous operation.
+
+The function logs "returning from sum" immediately after starting the asynchronous operation.
+
+The asynchronous operation inside the setTimeout is queued to be executed after a minimal delay (0 milliseconds).
+
+The function recognizes that the input is not an array, logs "rejecting ... ", and rejects the promise with the message 'BAD INPUT: Expected array as input'.
+
+For sumPromise1, the resolved value of the promise (the sum of the 2D array) is logged when using .then((result) => console.log(result)).
