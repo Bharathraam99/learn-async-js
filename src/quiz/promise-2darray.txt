@@ -1,1 +1,15 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+Output is :
+Sum called ... 
+returning from sum
+Sum called ... 
+rejecting ... 
+returning from sum
+BAD INPUT: Expected array as input
+resolving ... 
+45
+
+Initally the synchronous logs happen for both the promises namely Sum called ... , returning from sum, Sum called ... , rejecting ... , 
+returning from sum. After this the asynchrous promise of the second promise gets rejected and returns BAD INPUT: Expected array as input 
+(This happens first as reject is computationally faster as it does not involve any computation here). At last the first promise is resolved and logs resolving ... and prints the sum 45.
